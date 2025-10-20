@@ -2,9 +2,8 @@ import { Locator, Page, expect } from "@playwright/test"
 import { AppUrls } from 'tests/utils/app-urls'
 
 export class CheckoutOverviewPage {
-    constructor(private page: Page) {}
+    constructor(private page: Page) { }
 
-    //Locators
     private finishButton = '#finish'
 
     get checkoutOverviewPageTitle(): Locator {
@@ -67,7 +66,7 @@ export class CheckoutOverviewPage {
     async verifyItemTotalMatchesDisplayedSubtotal() {
         const expectedTotal = await this.calculateItemTotal()
         const subtotalText = await this.summarySubtotal.textContent()
-        const displayedTotal = parseFloat(subtotalText?.replace('Item total: $', '').trim() || '0' )
+        const displayedTotal = parseFloat(subtotalText?.replace('Item total: $', '').trim() || '0')
 
         expect(displayedTotal).toBeCloseTo(expectedTotal, 2)
     }

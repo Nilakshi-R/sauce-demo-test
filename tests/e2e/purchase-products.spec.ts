@@ -7,7 +7,7 @@ import { CheckoutOverviewPage } from 'tests/pages/checkout-overview.page'
 import { CheckoutCompletePage } from 'tests/pages/checkout-complete.page'
 import users from 'tests/test-data/users.json'
 
-test('Verify purchasing first two items', async ({page}) => {
+test('Verify purchasing first two items', async ({ page }) => {
     const loginPage = new LoginPage(page)
     const productPage = new ProductPage(page)
     const cartPage = new CartPage(page)
@@ -20,17 +20,17 @@ test('Verify purchasing first two items', async ({page}) => {
     await loginPage.login(users.userName.standardUser, users.password.password)
 
     //Verify Products page (successful login)
-    await productPage.verifyProductPageLoaded()    
+    await productPage.verifyProductPageLoaded()
 
     // Step 2: Add first two items to the cart and get the names and prices
     const selectedItems = await productPage.addItemsToCart(2)
-    
+
     // Step 3: Go to shopping cart
-    await productPage.proceedToCart()    
-    
+    await productPage.proceedToCart()
+
     // Get item details from the cart page
     const cartItems = await cartPage.getCartItems()
-    
+
     // Verify cart items by count, names and prices match
     expect(cartItems).toEqual(selectedItems)
     expect(cartItems).toHaveLength(2)
@@ -42,8 +42,8 @@ test('Verify purchasing first two items', async ({page}) => {
     await checkoutPage.verifyCheckoutPageLoad()
 
     // Step 5: Fill payment details
-    await checkoutPage.fillPaymentDetails('Nilakshi', 'Rajapakshe', '1234')  
-    
+    await checkoutPage.fillPaymentDetails('Nilakshi', 'Rajapakshe', '1234')
+
     // Step 6: Proceed to checkout overview page
     await checkoutPage.proceedToCheckoutOverviewPage()
 

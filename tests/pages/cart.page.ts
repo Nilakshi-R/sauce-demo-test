@@ -1,9 +1,8 @@
 import { expect, Locator, Page } from "@playwright/test";
 
 export class CartPage {
-    constructor(private page: Page) {}
+    constructor(private page: Page) { }
 
-    //Locators
     get cartItems(): Locator {
         return this.page.locator('.cart_item')
     }
@@ -40,5 +39,5 @@ export class CartPage {
 
     async proceedToCheckoutPage() {
         await this.checkoutButton.click()
-    }        
+    }
 }
