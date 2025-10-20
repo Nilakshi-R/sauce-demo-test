@@ -40,7 +40,7 @@ Run below command from project folder
 ```
     npx playwright test --project=chromium --headed "purchase-products.spec.ts"
 ```
-# Futher Enhancements Options
+# Futher enhancements
 - Add error handling to validate scenarios such as 
     - Item count is larger than number of listed items
 - Config to maintain environment specific properties (dev, staging, production)
