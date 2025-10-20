@@ -1,5 +1,5 @@
 # Sauce Demo - End to end test automation for purchasing 1st two items in the product list
-This project contains an automated end to end test case for complete purchasing first two products. It validates the selected item names, prices and calculated total item price(excluding tax)
+This project contains an automated end to end test case for complete purchasing first two products. It validates the selected item names, prices and calculated sub total.
 
 # Test flow
 purchase-product.spec.ts
