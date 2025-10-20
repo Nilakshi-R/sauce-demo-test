@@ -33,14 +33,14 @@ export class ProductPage {
         await expect(this.page).toHaveURL(AppUrls.PRODUCTS)
         await expect(this.productPageTitle).toHaveText('Products')
     }
-    
+
     /**
      * 
      * @param count - Number of items to add to the cart
      * @returns Array of selected item names and prices
      */
     async addItemsToCart(count: number): Promise<{ name: string; price: string }[]> {
-        
+
         const selectedItems: { name: string; price: string }[] = []
 
         for (let i = 0; i < count; i++) {
