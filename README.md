@@ -13,22 +13,22 @@ purchase-product.spec.ts
 8. Complete the purchase and verify purchasing success
 
 # Project structure
-|- SAUCE-DEMO-TEST
-|----| tests
-|--------|e2e
-|-----------|purchase-products.spec.ts
-|--------|pages
-|-----------|cart.page.ts
-|-----------|checkout-complete.page.ts
-|-----------|checkout-overview.page.ts
-|-----------|checkout.page.ts
-|-----------|login.page.ts
-|-----------|products.page.ts
-|---------|test-data
-|-----------|user.json
-|---------|utils
-|-----------|app-urls.ts
-|README.md
+|- SAUCE-DEMO-TEST<br>
+|----| tests<br>
+|--------| e2e<br>
+|-----------| purchase-products.spec.ts<br>
+|--------| pages<br>
+|-----------| cart.page.ts<br>
+|-----------| checkout-complete.page.ts<br>
+|-----------| checkout-overview.page.ts<br>
+|-----------| checkout.page.ts<br>
+|-----------| login.page.ts<br>
+|-----------| products.page.ts<br>
+|---------| test-data<br>
+|-----------| user.json<br>
+|---------| utils<br>
+|-----------| app-urls.ts<br>
+| README.md<br>
 
 # Technologies used
 1. Framework: Playwright
@@ -37,8 +37,9 @@ purchase-product.spec.ts
 
 # Steps to run the test
 Run below command from project folder
+```
     npx playwright test --project=chromium --headed "purchase-products.spec.ts"
-
+```
 # Futher Enhancements Options
 - Add error handling to validate scenarios such as 
     - Item count is larger than number of listed items
